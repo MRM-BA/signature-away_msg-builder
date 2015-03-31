@@ -8,14 +8,12 @@ This web app allows to dynamically build:
 
 
 ##Signature builder
-	![Signature builder][signature_live]
-	[logo]: https://github.com/MRM-BA/signature-away_msg-builder/resources/demo/signature_live.gif "Signature builder"
+![Signature builder][signature_live]
 
 
 ## OOO / Away message
 
-	![Away message][saway_live]	
-	[logo]: https://github.com/MRM-BA/signature-away_msg-builder/resources/demo/away_live.gif "Away message"
+![Away message][away_live]	
 	
 	
 ## Installation
@@ -32,3 +30,6 @@ TODO: Add Node, Bower, and Ggulp.
 2. You are done!
 
 
+
+[signature_live]: https://github.com/MRM-BA/signature-away_msg-builder/resources/demo/signature_live.gif "Signature builder"
+[away_live]: https://github.com/MRM-BA/signature-away_msg-builder/resources/demo/away_live.gif "Away message"
