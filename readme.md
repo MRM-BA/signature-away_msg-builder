@@ -40,7 +40,7 @@ Translations are located on the file **sources\js\translations.js** as JSON obje
 The web app can run stand-alone from any web browser since all the resources are relatives to the index.html.
 
 
-TODO: Add Node, Bower, and Ggulp.
+TODO: Add Node, Bower, and Gulp.
 
 
 ## Usage
