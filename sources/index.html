@@ -1,0 +1,759 @@
+﻿<!doctype html>
+<!--[if lt IE 7]>	<html class="ie lt-ie10 lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>		<html class="ie lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]>		<html class="ie lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]>		<html class="ie lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!-->	<html><!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>I&amp;D: Email Tools - MRM</title>
+	
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<![endif]-->
+	
+	<!-- STYLES -->
+	<link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+	<link rel="stylesheet" href="css/vendors/bootstrap-toggle.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body ng-app="myApp">
+
+	<div id="wrapper">
+	
+		<header id="header">
+		
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+
+						<div id="lang-switcher" class="dropdown pull-right" ng-controller="ctrlTranslate" data-toggle="dropdown">
+						  <button class="btn btn-default  btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							{{'lang_switcher.language' | translate}}
+							<span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="changeLanguage('es')" translate="lang_switcher.translate_button_es"></a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="changeLanguage('en')" translate="lang_switcher.translate_button_en"></a></li>
+						  </ul>
+						</div>
+						
+						<div id="logo">
+							<h1><span class="brand brand-mrm">MRM</span> <span class="brand brand-mccann">McCANN</span></h1>
+							<h2>{{ 'page_title' | translate }}</h2>
+						</div>
+						
+						
+						
+						
+										
+						<nav id="main-nav">
+							<div role="tabpanel" >
+							
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#tab-signature" role="tab" data-toggle="tab">{{ 'menu_tabs.signature' | translate }}</a></li>
+									<li role="presentation"><a href="#tab-away" role="tab" data-toggle="tab">{{ 'menu_tabs.away' | translate }}</a></li>
+									<li role="presentation" class="pull-right"><a href="#tab-help" role="tab" data-toggle="tab">{{ 'menu_tabs.help' | translate }}</a></li>
+								</ul>
+							
+							</div>
+						</nav>
+						
+					</div>
+				</div>
+			</div>
+		</header><!-- #header -->
+		
+		<main id="main">
+			
+			<div id="content">
+				<div class="tab-content">
+					
+					<div role="tabpanel" class="tab-pane active" id="tab-signature">
+					
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-5 col-sm-offset-1">
+									
+									<h1 class="page-title">{{'signature.title' | translate}}</h1>
+									
+									<form id="frm-signature" class="form-horizontal">
+										<fieldset>
+											<!-- Form Name -->
+											
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_fullname">{{ 'form.full_name' | translate }}</label>
+												<div class="col-md-8">
+													<input id="frm_fullname" name="frm_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="" ng-model="fullname"></div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_jobtitle">{{ 'form.job_title' | translate }}</label>
+												<div class="col-md-6">
+													<input id="frm_jobtitle" name="frm_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="jobtitle"> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_phone">{{ 'form.phone' | translate }}</label>
+												<div class="col-md-5">
+													<input id="frm_phone" name="frm_phone" type="text" placeholder="{{ 'form.phone_plh' | translate }}" class="form-control input-md" required="" ng-model="phonenumber"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_mobile">{{ 'form.mobile' | translate }}</label>
+												<div class="col-md-5">
+													<input id="frm_mobile" name="frm_mobile" type="text" placeholder="{{ 'form.mobile_plh' | translate }}" class="form-control input-md" required="" ng-model="mobilenumber"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_email">{{ 'form.email' | translate }}</label>
+												<div class="col-md-8">
+													<input id="frm_email" name="frm_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="email"> </div>
+											</div>
+											
+											<!--
+											<hr>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_mobile"> Include EA in signature</label>
+												<div class="col-md-4">
+													<input type="checkbox" data-toggle="toggle" data-toggle-target="collapse-ea" data-on="Yes" data-off="No" data-onstyle="warning" ng-model="easignature">
+												</div>
+											</div>
+											
+											<div class="collapse" id="collapse-ea">
+												<div class="well">
+
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_ea_name">EA full name</label>
+														<div class="col-md-8">
+															<input id="frm_ea_name" name="frm_ea_name" type="text" placeholder="EA name" class="form-control input-md" required="" ng-model="eafullname"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_ea_phone">EA phone number</label>
+														<div class="col-md-5">
+															<input id="frm_ea_phone" name="frm_ea_phone" type="text" placeholder="555.555.5555" class="form-control input-md" required="" ng-model="eaphonenumber"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_ea_email">EA email</label>
+														<div class="col-md-6">
+															<input id="frm_ea_email" name="frm_ea_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="eaemail"> </div>
+													</div>
+												
+												</div>
+											</div>
+											-->
+											
+											<hr>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_address">{{ 'form.address' | translate }}</label>
+												<div class="col-md-4">
+													<input id="frm_address" name="frm_address" type="text" placeholder="{{ 'form.address_plh' | translate }}" class="form-control input-md" required="" ng-model="addressnumber"> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_street">{{ 'form.street' | translate }}</label>
+												<div class="col-md-5">
+													<input id="frm_street" name="frm_street" type="text" placeholder="{{ 'form.street_plh' | translate }}" class="form-control input-md" required="" ng-model="addressstreet"> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_city">{{ 'form.city' | translate }}</label>
+												<div class="col-md-4">
+													<input id="frm_city" name="frm_city" type="text" placeholder="{{ 'form.city_plh' | translate }}" class="form-control input-md" required="" ng-model="city"> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_state">{{ 'form.state' | translate }}</label>
+												<div class="col-md-5">
+													<input id="frm_state" name="frm_state" type="text" placeholder="{{ 'form.state_plh' | translate }}" class="form-control input-md" required="" ng-model="state"> </div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="frm_zip">{{ 'form.zip' | translate }}</label>
+												<div class="col-md-3">
+													<input id="frm_zip" name="frm_zip" type="text" placeholder="{{ 'form.zip_plh' | translate }}" class="form-control input-md" required="" ng-model="zip"> </div>
+											</div>
+											
+											<hr>
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label">{{ 'signature.use_image_version' | translate }}</label>
+												<div class="col-md-4">
+													<input id="frm_noimagesignature" type="checkbox" data-toggle="toggle" checked  data-off="<i class='fa glyphicon glyphicon-picture'></i> {{ 'signature.image_version.image' | translate }}" data-on="{{ 'signature.image_version.text_only' | translate }}" ng-model="noimagesignature"  data-onstyle="warning" >
+												</div>
+											</div>
+
+										</fieldset>
+									</form>
+									
+								</div>
+								
+								<div class="col-sm-5 col-preview">
+
+									<div class="box-preview">
+										
+										<h4>{{ 'preview_title' | translate }}</h4>
+										
+										<div class="panel panel-default">
+											<div class="panel-body">
+												
+												<div class="preview" ng-click="previewClick()">
+												
+												
+													<table border="0" cellspacing="0" cellpadding="0"  alink="#999999" vlink="#999999" link="#999999" text="#999999" style="table-layout:fixed;">
+				
+															<tr>
+																<td style="line-height: 18px; font-size: 15px; color: #4a2d7f; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="font-weight: bold; line-height: 18px; font-size: 15px; color: #4a2d7f; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																		<b style="font-weight: bold; line-height: 18px; font-size: 15px; color: #4a2d7f; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">{{ fullname }}</b>
+																	</span>
+																</td>
+															</tr>
+															
+															<tr ng-show="jobtitle">
+																<td style="line-height: 18px; font-size: 15px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="line-height: 18px; font-size: 15px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">{{ jobtitle }}</span>
+																</td>
+															</tr>
+															
+															<tr ng-show="fullname || jobtitle">
+																<td height="12" style="font-size: 12px; line-height: 12px;">
+																	<span style="font-size: 12px; line-height: 12px;">&nbsp;</span>
+																</td>
+															</tr>
+															
+															<tr ng-show="phonenumber || mobilenumber">
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;" ng-show="phonenumber">t / {{ phonenumber }}  </span>
+																	<span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;" ng-show="mobilenumber">m / {{ mobilenumber }}</span>
+																</td>
+															</tr>
+															
+															<tr ng-show="email">
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<a href="mailto:{{ email }}" style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;"><span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;" ng-bind="email">{{ email }}</span></a>
+																</td>
+															</tr>
+															
+															<tr ng-show="easignature && (eafullname || eaphonenumber)">
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																		ea / <span ng-show="eafullname">{{ eafullname }}  </span><span ng-show="eaphonenumber">t / {{ eaphonenumber }}</span>
+																	</span>
+																</td>
+															</tr>
+																	
+															<tr ng-show="easignature && eaemail">
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;text-decoration: underline;">
+																	<a href="mailto:{{ eaemail }}" style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;"><span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;" ng-bind="eaemail">{{ eaemail }}</span></a>
+																</td>
+															</tr>
+															
+															<tr ng-show="addressnumber || addressstreet || city || state || zip">
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																		<span ng-show="addressnumber || addressstree"><span ng-show="addressnumber">{{ addressnumber }}</span> <span ng-show="addressstreet">{{ addressstreet }}</span></span> / <span ng-show="city">{{ city }} / </span><span ng-show="state">{{ state }} </span> <span ng-show="zip">{{ zip }}</span>
+																	</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<a href="http://www.mrm-mccann.com/" style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;"><span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; text-decoration: underline;">www.mrm-mccann.com</span></a>
+																</td>
+															</tr>
+															
+															<tr>
+																<td height="12" style="font-size: 12px; line-height: 12px;">
+																	<span style="font-size: 12px; line-height: 12px;">&nbsp;</span>
+																</td>
+															</tr>
+															
+															
+															<tr ng-show="noimagesignature">
+																<td style="line-height: 17px; font-size: 14px; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="font-weight: bold; line-height: 17px; font-size: 14px; color: #4F2D7F; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																		<b style="font-weight: bold; line-height: 17px; font-size: 14px; color: #4F2D7F; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">MRM</b>
+																	</span>
+																	<span style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																		<b style="line-height: 17px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">// McCann</b>
+																	</span>
+																</td>
+															</tr>
+															
+															<tr ng-hide="noimagesignature">
+																<td style="line-height: 38px; font-size: 38px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<img alt="MRM // McCann" width="186" height="38" src="http://5bfc77f76e0ae52b90a3-7ab4144cf1086016e98a2e1b0f554298.r32.cf2.rackcdn.com/Email_Sig_Large.jpg" style="border: none; width: 186px; height: 38px; display: block;">
+																</td>
+															</tr>
+															
+															<tr>
+																<td style="line-height: 14px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">
+																	<span style="line-height: 14px; font-size: 14px; color: #999999; font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;">Creativity. Technology. Performance.</span>
+																</td>
+															</tr>
+
+													</table>												
+												
+												
+												</div><!-- #signature-preview -->
+												
+												<div class="code h-hide" ng-bind-html="cleanHtml">
+												</div><!-- #signature-code -->
+												
+												
+											</div>
+										</div>
+
+										<div cass="tooltip" translate="signature.preview_tooltip"></div>
+										
+										
+									</div>
+									
+								</div>								
+							</div>
+						</div>
+					
+				
+					</div><!-- .tabpanel #tab-signature -->
+					
+					
+					<div role="tabpanel" class="tab-pane" id="tab-away" ng-controller="awayTab">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-5 col-sm-offset-1">
+								
+									<h2>{{ 'away.title' | translate }}</h2>
+									
+									<form class="form-horizontal" >
+										<fieldset>
+											
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="textinput">{{ 'away.from_date' | translate }}</label>  
+												<div class="col-md-5">
+											
+													<p class="input-group">
+														<input name="datefrom" type="text" class="form-control " datepicker-popup="{{format}}" ng-model="frm_away.datefrom" placeholder="{{ 'away.from_date_plh' | translate }}" max-date="frm_away.dateto" is-open="datepickers.datefrom" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+														<span class="input-group-btn">
+															<button type="button" class="btn btn-default" ng-click="open($event, 'datefrom')"><i class="glyphicon glyphicon-calendar"></i></button>
+														</span>
+													</p>
+														
+												</div>
+											</div>
+
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label" for="textinput">{{ 'away.to_date' | translate }}</label>  
+												<div class="col-md-5">
+													
+													<p class="input-group">
+														<input name="dateto" type="text" class="form-control input-md" datepicker-popup="{{format}}" ng-model="frm_away.dateto" placeholder="{{ 'away.to_date_plh' | translate }}" min-date="frm_away.datefrom" is-open="datepickers.dateto" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+														<span class="input-group-btn">
+															<button type="button" class="btn btn-default" ng-click="open($event, 'dateto')"><i class="glyphicon glyphicon-calendar"></i></button>
+														</span>
+													</p>
+													
+													
+												</div>
+											</div>
+											
+											<hr />
+											
+											<div class="form-group">
+												<label class="col-md-4 control-label">{{ 'away.include_contacts' | translate }}</label>
+												<div class="col-md-4">
+													<input type="checkbox" data-toggle="toggle" data-toggle-target="collapse_frm_away_cnt" data-on="{{ 'away.contacts.yes' | translate }}" data-off="{{ 'away.contacts.no' | translate }}" data-onstyle="warning" ng-model="frm_away_cnt">
+												</div>
+											</div>
+											
+											<div class="collapse" id="collapse_frm_away_cnt">
+												<div class="well">
+													
+														
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_fullname">{{ 'form.full_name' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_1_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_1_fullname"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_jobtitle">{{ 'form.job_title' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_1_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_jobtitle"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_phone">{{ 'form.phone' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_1_phone" type="text" placeholder="{{ 'form.phone_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_phone"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_mobile">{{ 'form.mobile' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_1_mobile" type="text" placeholder="{{ 'form.mobile_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_mobile"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_email">{{ 'form.email' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_1_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_email"> </div>
+													</div>
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_other">Other</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_1_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_1_other"> </div>
+													</div>
+												
+												
+													<hr>
+
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_fullname">{{ 'form.full_name' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_2_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_2_fullname"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_jobtitle">{{ 'form.job_title' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_2_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_2_jobtitle"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_phone">{{ 'form.phone' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_2_phone" type="text" placeholder="{{ 'form.phone_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_2_phone"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_mobile">{{ 'form.mobile' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_2_mobile" type="text" placeholder="{{ 'form.mobile_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_2_mobile"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_email">{{ 'form.email' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_2_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_2_email"> </div>
+													</div>
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_other">Other</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_2_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_2_other"> </div>
+													</div>
+													
+													<hr>
+
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_fullname">{{ 'form.full_name' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_3_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_3_fullname"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_jobtitle">{{ 'form.job_title' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_3_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_3_jobtitle"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_phone">{{ 'form.phone' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_3_phone" type="text" placeholder="{{ 'form.phone_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_3_phone"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_mobile">{{ 'form.mobile' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_3_mobile" type="text" placeholder="{{ 'form.mobile_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_3_mobile"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_email">{{ 'form.email' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_3_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_3_email"> </div>
+													</div>
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_other">Other</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_3_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_3_other"> </div>
+													</div>
+													
+													<hr>
+
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_fullname">{{ 'form.full_name' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_4_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_4_fullname"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_jobtitle">{{ 'form.job_title' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_4_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_4_jobtitle"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_phone">{{ 'form.phone' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_4_phone" type="text" placeholder="{{ 'form.phone_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_4_phone"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_mobile">{{ 'form.mobile' | translate }}</label>
+														<div class="col-md-5">
+															<input id="frm_away_cnt_4_mobile" type="text" placeholder="{{ 'form.mobile_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_4_mobile"> <span class="help-block">{{ 'form.input_number_help' | translate }}</span> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_email">{{ 'form.email' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_away_cnt_4_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_4_email"> </div>
+													</div>
+													
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_other">Other</label>
+														<div class="col-md-6">
+															<input id="frm_away_cnt_4_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_4_other"> </div>
+													</div>
+													
+													
+												
+												</div>
+											</div>
+											
+										</fieldset>
+									</form>
+									
+								
+								</div>							
+								
+								<div class="col-sm-5 col-preview">
+									
+									<div class="box-preview">
+										
+										<h4>Preview</h4>
+										
+										<div class="panel panel-default">
+											<div class="panel-body">
+												
+												<div class="preview">
+																									
+													<p>I´ll be OOO on PTO from <span style="color: #4a2d7f;">{{ (frm_away.datefrom | date:'yyyy/MM/dd')  || "[FROM DATE]"}}</span> until <span style="color: #4a2d7f;">{{(frm_away.dateto | date:'yyyy/MM/dd') || "[TO DATE]" }}</span>, with limited or no access to my emails.</p>
+													<br>
+													
+													
+													<div ng-hide="frm_away_cnt">
+														<p>Should you have any urgency I´ll reply as soon as I can on my return.</p>
+														<br>
+													</div>
+													
+													<div ng-show="frm_away_cnt">
+														<p>Should you have any urgency please contact:</p>
+														
+																										
+														<ul style="padding: 0 0 0 15px; list-style-type: none;">
+															<li ng-show="frm_away_cnt_1_fullname || frm_away_cnt_1_jobtitle || frm_away_cnt_1_phone || frm_away_cnt_1_mobile || frm_away_cnt_1_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_1_fullname" style="font-weight: bold; color: #4a2d7f;"><b style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_1_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_1_jobtitle"> - {{ frm_away_cnt_1_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_1_phone"><br>t / {{ frm_away_cnt_1_phone }}</span>
+																<span ng-show="frm_away_cnt_1_mobile"><br> m / {{ frm_away_cnt_1_mobile }}</span>
+																<span ng-show="frm_away_cnt_1_email"><br><a href="frm_away_cnt_1_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_1_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_1_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_1_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_2_fullname || frm_away_cnt_2_jobtitle || frm_away_cnt_2_phone || frm_away_cnt_2_mobile || frm_away_cnt_2_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_2_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_2_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_2_jobtitle"> - {{ frm_away_cnt_2_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_2_phone"><br>t / {{ frm_away_cnt_2_phone }}</span>
+																<span ng-show="frm_away_cnt_2_mobile"><br> m / {{ frm_away_cnt_2_mobile }}</span>
+																<span ng-show="frm_away_cnt_2_email"><br><a href="frm_away_cnt_2_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_2_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_2_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_2_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_3_fullname || frm_away_cnt_3_jobtitle || frm_away_cnt_3_phone || frm_away_cnt_3_mobile || frm_away_cnt_3_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_3_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_3_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_3_jobtitle"> - {{ frm_away_cnt_3_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_3_phone"><br>t / {{ frm_away_cnt_3_phone }}</span>
+																<span ng-show="frm_away_cnt_3_mobile"><br> m / {{ frm_away_cnt_3_mobile }}</span>
+																<span ng-show="frm_away_cnt_3_email"><br><a href="frm_away_cnt_3_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_3_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_3_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_3_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_4_fullname || frm_away_cnt_4_jobtitle || frm_away_cnt_4_phone || frm_away_cnt_4_mobile || frm_away_cnt_4_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_4_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_4_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_4_jobtitle"> - {{ frm_away_cnt_4_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_4_phone"><br>t / {{ frm_away_cnt_4_phone }}</span>
+																<span ng-show="frm_away_cnt_4_mobile"><br> m / {{ frm_away_cnt_4_mobile }}</span>
+																<span ng-show="frm_away_cnt_4_email"><br><a href="frm_away_cnt_4_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_4_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_4_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_4_other }}</span>
+															</li>
+														</ul>
+														<br>
+														
+														<p>Otherwise I´ll reply as soon as I can on my return.</p>
+														<br>
+														
+													</div>
+													
+													<p>Thank you.</p>
+													
+													<hr>
+													
+													<p>Estaré fuera de la oficina por vacaciones desde el <span style="color: #4a2d7f;">{{ (frm_away.datefrom | date:'yyyy/MM/dd')  || "[FROM DATE]"}}</span> hasta el <span style="color: #4a2d7f;">{{ (frm_away.dateto | date:'yyyy/MM/dd')  || "[TO DATE]"}}</span>, con acceso limitado o nulo a mis emails.</p>
+													<br>
+													
+													<div ng-hide="frm_away_cnt">
+														<p>Si tiene alguna urgencia contestaré tan pronto como pueda a mi regreso.</p>
+														<br>
+													</div>
+													
+													<div ng-show="frm_away_cnt">
+														<p>Si tiene alguna urgencia por favor contactar a:</p>
+													
+														<ul style="padding: 0 0 0 15px; list-style-type: none;">
+															<li ng-show="frm_away_cnt_1_fullname || frm_away_cnt_1_jobtitle || frm_away_cnt_1_phone || frm_away_cnt_1_mobile || frm_away_cnt_1_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_1_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_1_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_1_jobtitle"> - {{ frm_away_cnt_1_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_1_phone"><br>t / {{ frm_away_cnt_1_phone }}</span>
+																<span ng-show="frm_away_cnt_1_mobile"><br> m / {{ frm_away_cnt_1_mobile }}</span>
+																<span ng-show="frm_away_cnt_1_email"><br><a href="frm_away_cnt_1_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_1_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_1_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_1_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_2_fullname || frm_away_cnt_2_jobtitle || frm_away_cnt_2_phone || frm_away_cnt_2_mobile || frm_away_cnt_2_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_2_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_2_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_2_jobtitle"> - {{ frm_away_cnt_2_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_2_phone"><br>t / {{ frm_away_cnt_2_phone }}</span>
+																<span ng-show="frm_away_cnt_2_mobile"><br> m / {{ frm_away_cnt_2_mobile }}</span>
+																<span ng-show="frm_away_cnt_2_email"><br><a href="frm_away_cnt_2_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_2_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_2_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_2_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_3_fullname || frm_away_cnt_3_jobtitle || frm_away_cnt_3_phone || frm_away_cnt_3_mobile || frm_away_cnt_3_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_3_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_3_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_3_jobtitle"> - {{ frm_away_cnt_3_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_3_phone"><br>t / {{ frm_away_cnt_3_phone }}</span>
+																<span ng-show="frm_away_cnt_3_mobile"><br> m / {{ frm_away_cnt_3_mobile }}</span>
+																<span ng-show="frm_away_cnt_3_email"><br><a href="frm_away_cnt_3_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_3_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_3_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_3_other }}</span>
+															</li>
+															<li ng-show="frm_away_cnt_4_fullname || frm_away_cnt_4_jobtitle || frm_away_cnt_4_phone || frm_away_cnt_4_mobile || frm_away_cnt_4_email" style="color: #666666; margin-top: 15px;">
+																<span ng-show="frm_away_cnt_4_fullname" style="font-weight: bold; color: #4a2d7f;"><b  style="font-weight: bold; color: #4a2d7f;">{{ frm_away_cnt_4_fullname }}</b></span>
+																<span ng-show="frm_away_cnt_4_jobtitle"> - {{ frm_away_cnt_4_jobtitle }}</span>
+																<span ng-show="frm_away_cnt_4_phone"><br>t / {{ frm_away_cnt_4_phone }}</span>
+																<span ng-show="frm_away_cnt_4_mobile"><br> m / {{ frm_away_cnt_4_mobile }}</span>
+																<span ng-show="frm_away_cnt_4_email"><br><a href="frm_away_cnt_4_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ frm_away_cnt_4_email }}</span></a></span>
+																<span ng-show="frm_away_cnt_4_other" style="padding-top: 5px;"><br>{{ frm_away_cnt_4_other }}</span>
+															</li>
+														</ul>
+														<br>
+														
+														<p>De lo contrario contestaré tan pronto como me sea posible a mi regreso.</p>
+														<br>
+														
+													</div>
+														
+													 
+													<p>Gracias.</p>
+
+												
+												
+												</div><!-- #away-code -->
+												
+												<div class="code h-hide">
+												</div><!-- #away-code -->
+												
+											
+											</div>
+										</div><!-- .panel -->
+									
+										<div cass="tooltip" translate="away.preview_tooltip"></div>
+										
+									</div><!-- box-preview --> 
+
+								</div>		
+								
+							</div>
+						</div>
+					</div><!-- .tabpanel #tab-away -->
+					
+					
+					<div role="tabpanel" class="tab-pane" id="tab-help">
+						<div class="container-fluid">
+							<div class="row">
+								
+								<div class="col-sm-5 col-sm-offset-1">
+								
+									<h2>{{ 'help.title' | translate }}</h2>
+									
+									<h3>{{ 'signature.title' | translate }}</h3>
+									<ul class="list-group">
+										<li class="list-group-item for-windows"><a href="http://www.howtogeek.com/tips/how-to-create-an-email-signature-in-outlook-2013/" target="_blank">How to Create an Email Signature in Outlook 2013</a></li>
+										<li class="list-group-item for-mac"><a href="http://support.microsoft.com/kb/2455171/en-US" target="_blank">How to create signature or customize it (add picture) in Outlook for Mac 2011</a></li>
+									</ul>
+									
+								</div>	
+							</div>
+						</div>
+					</div><!-- .tabpanel #tab-help -->
+				
+				
+				</div><!-- .tab-content -->
+			</div><!-- #content -->
+		</main><!-- #main -->
+		
+		
+	</div><!-- #wrapper -->
+	
+	
+	<div id="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">				
+					&copy;2015 MRM//McCANN. {{ 'footer.rights_reserved' | translate }}.
+				</div>
+			</div>
+		</div>
+	</div><!-- #footer -->
+	
+	
+	
+	<!-- SCRIPTS -->
+	<script src="js/vendors/jquery.min.js"></script>
+	<script src="js/vendors/angular.1.3.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="js/vendors/ui-bootstrap-custom-tpls-0.12.1.js"></script>	
+	<script src="js/vendors/bootstrap-toggle.min.js"></script>
+	<script src="js/vendors/angular-translate.min.js"></script>
+	<script src="js/main.js"></script>	
+	<script src="js/translations.js"></script>	
+	<script src="js/app.js"></script>	
+
+</body>
+</html>

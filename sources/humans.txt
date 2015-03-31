@@ -1,0 +1,10 @@
+# humanstxt.org/
+
+
+# TEAM
+	-Lucas Dasso - Team leader & Sr. FrontEnd developer  
+	
+# SITE
+- Standards: CSS3, HTML5  
+- Components: jQuery, Bootstrap 3, Angular, UI-Bootstrap  
+- Software: Notepad++, Node.js, Chrome  
