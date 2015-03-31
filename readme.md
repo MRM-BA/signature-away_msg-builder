@@ -5,6 +5,19 @@ This web app allows to dynamically build:
 1. A digital signatures for Outlook emails.  
 2. The out of office message.  
 
+
+###Capabilities
+
+- Browser support: IE9+, Chrome, FireFox
+- Responsive
+
+
+###Technologies
+- jQuery
+- Bootstrap 3
+- Angular 1.3
+
+
 ###Multilingual
 
 - The web app is aviable on english and spanish.
