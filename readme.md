@@ -38,4 +38,4 @@ TODO: Add Node, Bower, and Ggulp.
 
 
 [signature_live]: https://raw.githubusercontent.com/MRM-BA/signature-away_msg-builder/master/resources/demo/signature_live.gif "Signature builder"
-[away_live]: https://raw.githubusercontent.com/MRM-BA/signature-away_msg-builder/master/resources/demo/away_live.gif"Away message"
+[away_live]: https://raw.githubusercontent.com/MRM-BA/signature-away_msg-builder/master/resources/demo/away_live.gif "Away message"
