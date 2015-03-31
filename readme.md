@@ -5,14 +5,19 @@ This web app allows to dynamically build:
 1. A digital signatures for Outlook emails.  
 2. The out of office message.  
 
+###Multilingual
+	- The web app is aviable on english and spanish.
+	- The default language is automaticly detected based on the browser language.
+	
+	Translations are located on the file **sources\js\translations.js** as JSON object.
 
 
-##Signature builder
+##Preview
+
+###Signature builder
 ![Signature builder][signature_live]
 
-
-## OOO / Away message
-
+### OOO / Away message
 ![Away message][away_live]	
 	
 	
