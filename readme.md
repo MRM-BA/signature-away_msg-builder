@@ -6,10 +6,11 @@ This web app allows to dynamically build:
 2. The out of office message.  
 
 ###Multilingual
-	- The web app is aviable on english and spanish.
-	- The default language is automaticly detected based on the browser language.
-	
-	Translations are located on the file **sources\js\translations.js** as JSON object.
+
+- The web app is aviable on english and spanish.
+- The default language is automaticly detected based on the browser language.
+
+Translations are located on the file **sources\js\translations.js** as JSON object.
 
 
 ##Preview
