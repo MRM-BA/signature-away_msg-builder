@@ -65,7 +65,7 @@ var translations = {
 				no: "No"
 			},
 			form: {
-				full_name : "Contact Name",
+				full_name : "Full Name",
 				full_name_plh : "Contact name",
 				job_title_plh: "Contact position",
 				other: "Project/Reason"
