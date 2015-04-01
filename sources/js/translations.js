@@ -17,7 +17,7 @@ var translations = {
 		},
 		form : {
 			input_number_help: "Separated with periods.",
-			full_name: "Full name",
+			full_name: "Full Name",
 			full_name_plh: "Your Name",
 			job_title: "Job title",
 			job_title_plh: "Your position",
@@ -41,8 +41,13 @@ var translations = {
 		},
 		signature: {
 			title: "Signature Builder",
-			use_image_version: "Use non-image version",
+			custom_address: {
+				label: "Use address",
+				yes: "Custom",
+				no: "Default"
+			},
 			image_version: {
+				label: "Use non-image version",
 				text_only: "Text only",
 				image: "Image"
 			},
@@ -58,6 +63,12 @@ var translations = {
 			contacts: {
 				yes: "Yes",
 				no: "No"
+			},
+			form: {
+				full_name : "Contact Name",
+				full_name_plh : "Contact name",
+				job_title_plh: "Contact position",
+				other: "Project/Reason"
 			},
 			preview_tooltip: 	"<small><p>To copy the away message:</p><ol><li>Select the away message by clicking on the preview window.</li><li>Copy the selected text (Win: Ctrl + C / Mac: Cmd + C).</li><li>Paste the code in your OOO email in Outlook.</li></ol></small>"
 		},
@@ -93,22 +104,27 @@ var translations = {
 			mobile_plh: "555.555.5555",
 			email: "Email",
 			email_plh: "nombre.apellido@mrm-mccann.com",
-			address: "Dirección",
-			address_plh: "Altura de la calle",
+			address: "Altura",
+			address_plh: "1234",
 			street: "Calle",
 			street_plh: "Nombre de la calle",
 			city: "Ciudad",
-			city_plh: "Ej.: Buens Aires",
+			city_plh: "Capital Federal",
 			state: "Provincia",
-			state_plh: "Ej.: Capital Federal",
+			state_plh: "Buenos  Aires",
 			zip: "Código postal",
-			zip_plh: "Ej.: 1428",
+			zip_plh: "A1234BCD",
 			other: "Otro"
 		},
 		signature: {
 			title: "Creador de firma",
-			use_image_version: "Usar version solo texto",
+			custom_address: {
+				label: "Dirección",
+				yes: "Personalizada",
+				no: "Default"
+			},
 			image_version: {
+				label: "Usar version solo texto",
 				text_only: "Solo texto",
 				image: "Imagen"
 			},
@@ -124,6 +140,12 @@ var translations = {
 			contacts: {
 				yes: "Si",
 				no: "No"
+			},
+			form: {
+				full_name : "Nombre",
+				full_name_plh : "Nombre del contacto",
+				job_title_plh: "Posición del contacto",
+				other: "Proyecto/Reazón"
 			},
 			preview_tooltip: 	"<small><p>Para copiar el mensaje de fuera de la ofician:</p><ol><li>Seleccione el mensaje haciendo click en la ventana de vista previa.</li><li>Copie el texto seleccionado (Win: Ctrl + C / Mac: Cmd + C).</li><li>Pegue el contenido del mensaje como el cuerpo del email en Outlook.</li></ol></small>"
 		},

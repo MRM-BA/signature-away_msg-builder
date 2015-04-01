@@ -120,42 +120,61 @@
 													<input id="frm_email" name="frm_email" type="text" placeholder="{{ 'form.email_plh' | translate }}" class="form-control input-md" required="" ng-model="email"> </div>
 											</div>
 											
+											
+											
+											
+										
 											<hr>
 											
 											<div class="form-group">
-												<label class="col-md-4 control-label" for="frm_address">{{ 'form.address' | translate }}</label>
+												<label class="col-md-4 control-label" for="frm_mobile">{{ 'signature.custom_address.label' | translate }}</label>
 												<div class="col-md-4">
-													<input id="frm_address" name="frm_address" type="text" placeholder="{{ 'form.address_plh' | translate }}" class="form-control input-md" required="" ng-model="addressnumber"> </div>
+													<input type="checkbox" data-toggle="toggle" data-toggle-target="collapse-address" data-on="{{ 'signature.custom_address.yes' | translate }}" data-off="{{ 'signature.custom_address.no' | translate }}" data-onstyle="warning" ng-model="customaddress">
+												</div>
 											</div>
 											
-											<div class="form-group">
-												<label class="col-md-4 control-label" for="frm_street">{{ 'form.street' | translate }}</label>
-												<div class="col-md-5">
-													<input id="frm_street" name="frm_street" type="text" placeholder="{{ 'form.street_plh' | translate }}" class="form-control input-md" required="" ng-model="addressstreet"> </div>
+											<div class="collapse" id="collapse-address">
+												<div class="well">
+
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_street">{{ 'form.street' | translate }}</label>
+														<div class="col-md-8">
+															<input id="frm_street" name="frm_street" type="text" placeholder="{{ 'form.street_plh' | translate }}" class="form-control input-md" required="" ng-model="addressstreet" value="Nicaragua"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_address">{{ 'form.address' | translate }}</label>
+														<div class="col-md-3">
+															<input id="frm_address" name="frm_address" type="text" placeholder="{{ 'form.address_plh' | translate }}" class="form-control input-md" required="" ng-model="addressnumber" value="5468"> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_city">{{ 'form.city' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_city" name="frm_city" type="text" placeholder="{{ 'form.city_plh' | translate }}" class="form-control input-md" required="" ng-model="city" value="Cap. Fed."> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_state">{{ 'form.state' | translate }}</label>
+														<div class="col-md-6">
+															<input id="frm_state" name="frm_state" type="text" placeholder="{{ 'form.state_plh' | translate }}" class="form-control input-md" required="" ng-model="state" value="Bs. As."> </div>
+													</div>
+													
+													<div class="form-group">
+														<label class="col-md-4 control-label" for="frm_zip">{{ 'form.zip' | translate }}</label>
+														<div class="col-md-4">
+															<input id="frm_zip" name="frm_zip" type="text" placeholder="{{ 'form.zip_plh' | translate }}" class="form-control input-md" required="" ng-model="zip" value="C1414BWB "> </div>
+													</div>
+												
+													
+												</div>
 											</div>
 											
-											<div class="form-group">
-												<label class="col-md-4 control-label" for="frm_city">{{ 'form.city' | translate }}</label>
-												<div class="col-md-4">
-													<input id="frm_city" name="frm_city" type="text" placeholder="{{ 'form.city_plh' | translate }}" class="form-control input-md" required="" ng-model="city"> </div>
-											</div>
-											
-											<div class="form-group">
-												<label class="col-md-4 control-label" for="frm_state">{{ 'form.state' | translate }}</label>
-												<div class="col-md-5">
-													<input id="frm_state" name="frm_state" type="text" placeholder="{{ 'form.state_plh' | translate }}" class="form-control input-md" required="" ng-model="state"> </div>
-											</div>
-											
-											<div class="form-group">
-												<label class="col-md-4 control-label" for="frm_zip">{{ 'form.zip' | translate }}</label>
-												<div class="col-md-3">
-													<input id="frm_zip" name="frm_zip" type="text" placeholder="{{ 'form.zip_plh' | translate }}" class="form-control input-md" required="" ng-model="zip"> </div>
-											</div>
 											
 											<hr>
 											
 											<div class="form-group">
-												<label class="col-md-4 control-label">{{ 'signature.use_image_version' | translate }}</label>
+												<label class="col-md-4 control-label">{{ 'signature.image_version.label' | translate }}</label>
 												<div class="col-md-4">
 													<input id="frm_noimagesignature" type="checkbox" data-toggle="toggle" checked  data-off="<i class='fa glyphicon glyphicon-picture'></i> {{ 'signature.image_version.image' | translate }}" data-on="{{ 'signature.image_version.text_only' | translate }}" ng-model="noimagesignature"  data-onstyle="warning" >
 												</div>
@@ -352,15 +371,15 @@
 														
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_1_fullname">{{ 'form.full_name' | translate }}</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_fullname">{{ 'away.form.full_name' | translate }}</label>
 														<div class="col-md-8">
-															<input id="frm_away_cnt_1_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_1_fullname"> </div>
+															<input id="frm_away_cnt_1_fullname" type="text" placeholder="{{ 'away.form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_1_fullname"> </div>
 													</div>
 													
 													<div class="form-group">
 														<label class="col-md-4 control-label" for="frm_away_cnt_1_jobtitle">{{ 'form.job_title' | translate }}</label>
 														<div class="col-md-6">
-															<input id="frm_away_cnt_1_jobtitle" type="text" placeholder="{{ 'form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_jobtitle"> </div>
+															<input id="frm_away_cnt_1_jobtitle" type="text" placeholder="{{ 'away.form.job_title_plh' | translate }}" class="form-control input-md" required="" ng-model="frm_away_cnt_1_jobtitle"> </div>
 													</div>
 													
 													<div class="form-group">
@@ -383,7 +402,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_1_other">Other</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_1_other">{{ 'away.form.other' | translate }}</label>
 														<div class="col-md-6">
 															<input id="frm_away_cnt_1_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_1_other"> </div>
 													</div>
@@ -394,7 +413,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_2_fullname">{{ 'form.full_name' | translate }}</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_fullname">{{ 'away.form.full_name' | translate }}</label>
 														<div class="col-md-8">
 															<input id="frm_away_cnt_2_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_2_fullname"> </div>
 													</div>
@@ -425,7 +444,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_2_other">Other</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_2_other">{{ 'away.form.other' | translate }}</label>
 														<div class="col-md-6">
 															<input id="frm_away_cnt_2_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_2_other"> </div>
 													</div>
@@ -435,7 +454,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_3_fullname">{{ 'form.full_name' | translate }}</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_fullname">{{ 'away.form.full_name' | translate }}</label>
 														<div class="col-md-8">
 															<input id="frm_away_cnt_3_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_3_fullname"> </div>
 													</div>
@@ -466,7 +485,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_3_other">Other</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_3_other">{{ 'away.form.other' | translate }}</label>
 														<div class="col-md-6">
 															<input id="frm_away_cnt_3_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_3_other"> </div>
 													</div>
@@ -476,7 +495,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_4_fullname">{{ 'form.full_name' | translate }}</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_fullname">{{ 'away.form.full_name' | translate }}</label>
 														<div class="col-md-8">
 															<input id="frm_away_cnt_4_fullname" type="text" placeholder="{{ 'form.full_name_plh' | translate }}" class="form-control input-md" required="true" ng-model="frm_away_cnt_4_fullname"> </div>
 													</div>
@@ -507,7 +526,7 @@
 													
 													
 													<div class="form-group">
-														<label class="col-md-4 control-label" for="frm_away_cnt_4_other">Other</label>
+														<label class="col-md-4 control-label" for="frm_away_cnt_4_other">{{ 'away.form.other' | translate }}</label>
 														<div class="col-md-6">
 															<input id="frm_away_cnt_4_other" type="text" class="form-control input-md" required="" ng-model="frm_away_cnt_4_other"> </div>
 													</div>

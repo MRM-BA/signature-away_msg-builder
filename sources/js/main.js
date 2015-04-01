@@ -33,6 +33,18 @@ jQuery.fn.selectText = function(){
 	}
 };
 
+//CHECKBOX UPATER
+var update_checkboxs = function(){
+	$('input[data-toggle]').each(function(){
+		var _this = this;
+		$(_this).bootstrapToggle('destroy');
+		setTimeout(function(){
+			$(_this).bootstrapToggle();
+		},20);
+	});
+}
+
+
 /**********************************
 	DOCUMENT READY
 ***********************************/
@@ -55,16 +67,10 @@ $(document).ready(function(){
 	// LANGUEAGE SWITCHER
 	$('#lang_switcher a').click(function(event){
 		event.preventDefualt();
+		update_checkboxs();
 	});
 	
 	
-	//CHECKBOX UPATER
-	var update_checkboxs = function(){
-		$('input[data-toggle]').bootstrapToggle('destroy');
-		setTimeout(function(){
-			$('input[data-toggle]').bootstrapToggle();
-		},20);
-	}
 	
 	
 	/* TOGGLE COLLAPSE
