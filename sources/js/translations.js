@@ -70,6 +70,8 @@ var translations = {
 				job_title_plh: "Contact position",
 				other: "Project/Reason"
 			},
+			new_contact: "Add new contact",
+			remove_contact: "Remove",
 			preview_tooltip: 	"<small><p>To copy the away message:</p><ol><li>Select the away message by clicking on the preview window.</li><li>Copy the selected text (Win: Ctrl + C / Mac: Cmd + C).</li><li>Paste the code in your OOO email in Outlook.</li></ol></small>"
 		},
 		help: {
@@ -147,6 +149,8 @@ var translations = {
 				job_title_plh: "Posición del contacto",
 				other: "Proyecto/Reazón"
 			},
+			new_contact: "Agregar contacto",
+			remove_contact: "Eliminar",
 			preview_tooltip: 	"<small><p>Para copiar el mensaje de fuera de la ofician:</p><ol><li>Seleccione el mensaje haciendo click en la ventana de vista previa.</li><li>Copie el texto seleccionado (Win: Ctrl + C / Mac: Cmd + C).</li><li>Pegue el contenido del mensaje como el cuerpo del email en Outlook.</li></ol></small>"
 		},
 		help: {

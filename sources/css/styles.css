@@ -282,3 +282,15 @@ input[data-toggle='toggle']{
 	}
 }
 
+
+
+
+
+#collapse_frm_away_cnt .well{
+	background: #dad9d9;
+	padding: 10px;
+}
+
+#collapse_frm_away_cnt .group-contact{
+	margin-bottom: 10px;
+}

@@ -4,6 +4,8 @@
 var app = angular.module('myApp', ['ui.bootstrap', 'pascalprecht.translate']);
 
 
+
+
 // TRANSLATIONS 
 app.config(function($translateProvider) {
 	$translateProvider
@@ -59,3 +61,19 @@ app.directive('input', function ($parse) {
     }
   };
 });
+
+
+app.controller('awayTab', function($translate, $scope) {
+
+	$scope.contacts = [{}]; // Default: one empty contact
+	
+	$scope.add = function () {
+		$scope.contacts.push({}); //Add one empty contact
+    };
+	
+	$scope.remove= function (index) {
+		$scope.contacts.splice(index, 1);
+	};
+	
+		
+})
