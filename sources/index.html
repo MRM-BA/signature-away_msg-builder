@@ -380,6 +380,11 @@
 															<div class="panel-body">
 															
 																
+																<div class="form-group">
+																	<label class="col-md-4 control-label" for="frm_away_cnt_other">{{ 'away.form.other' | translate }}</label>
+																	<div class="col-md-6">
+																		<input id="frm_away_cnt_other" type="text" class="form-control input-md" required="" ng-model="contact.frm_away_cnt_other"> </div>
+																</div>
 															
 																<div class="form-group">
 																	<label class="col-md-4 control-label" for="frm_away_cnt_fullname">{{ 'away.form.full_name' | translate }}</label>
@@ -412,11 +417,6 @@
 																</div>
 																
 																
-																<div class="form-group">
-																	<label class="col-md-4 control-label" for="frm_away_cnt_other">{{ 'away.form.other' | translate }}</label>
-																	<div class="col-md-6">
-																		<input id="frm_away_cnt_other" type="text" class="form-control input-md" required="" ng-model="contact.frm_away_cnt_other"> </div>
-																</div>
 																																
 															</div>
 															
@@ -459,12 +459,12 @@
 														<p>Should you have any urgency please contact:</p>
 														<ul style="padding: 0 0 0 15px; list-style-type: none;">
 															<li style="color: #666666; margin-top: 15px;" ng-repeat="contact in contacts">
+																<span ng-show="contact.frm_away_cnt_other" style="padding-top: 5px;">&gt; {{ contact.frm_away_cnt_other }}<br></span>
 																<span ng-show="contact.frm_away_cnt_fullname" style="font-weight: bold; color: #4a2d7f;"><b style="font-weight: bold; color: #4a2d7f;">{{ contact.frm_away_cnt_fullname }}</b></span>
 																<span ng-show="contact.frm_away_cnt_jobtitle"> - {{ contact.frm_away_cnt_jobtitle }}</span>
 																<span ng-show="contact.frm_away_cnt_phone"><br>t / {{ contact.frm_away_cnt_phone }}</span>
 																<span ng-show="contact.frm_away_cnt_mobile"><br> m / {{ contact.frm_away_cnt_mobile }}</span>
 																<span ng-show="contact.frm_away_cnt_email"><br><a href="frm_away_cnt_1_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ contact.frm_away_cnt_email }}</span></a></span>
-																<span ng-show="contact.frm_away_cnt_other" style="padding-top: 5px;"><br>{{ contact.frm_away_cnt_other }}</span>
 															</li>
 														</ul>
 														<br>
@@ -489,12 +489,12 @@
 														<p>Si tiene alguna urgencia por favor contactar a:</p>
 														<ul style="padding: 0 0 0 15px; list-style-type: none;">
 															<li style="color: #666666; margin-top: 15px;" ng-repeat="contact in contacts">
+																<span ng-show="contact.frm_away_cnt_other" style="padding-top: 5px;">&gt; {{ contact.frm_away_cnt_other }}<br></span>
 																<span ng-show="contact.frm_away_cnt_fullname" style="font-weight: bold; color: #4a2d7f;"><b style="font-weight: bold; color: #4a2d7f;">{{ contact.frm_away_cnt_fullname }}</b></span>
 																<span ng-show="contact.frm_away_cnt_jobtitle"> - {{ contact.frm_away_cnt_jobtitle }}</span>
 																<span ng-show="contact.frm_away_cnt_phone"><br>t / {{ contact.frm_away_cnt_phone }}</span>
 																<span ng-show="contact.frm_away_cnt_mobile"><br> m / {{ contact.frm_away_cnt_mobile }}</span>
 																<span ng-show="contact.frm_away_cnt_email"><br><a href="frm_away_cnt_1_email" style="text-decoration: underline;"><span style="text-decoration: underline;">{{ contact.frm_away_cnt_email }}</span></a></span>
-																<span ng-show="contact.frm_away_cnt_other" style="padding-top: 5px;"><br>{{ contact.frm_away_cnt_other }}</span>
 															</li>
 														</ul>
 														<br>
