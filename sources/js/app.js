@@ -4,8 +4,6 @@
 var app = angular.module('myApp', ['ui.bootstrap', 'pascalprecht.translate']);
 
 
-
-
 // TRANSLATIONS 
 app.config(function($translateProvider) {
 	$translateProvider
@@ -15,8 +13,9 @@ app.config(function($translateProvider) {
 });
 
 // DATE PICKER
-angular.module('ui.bootstrap').controller('awayTab', function ($scope) {
+angular.module('ui.bootstrap').controller('awayTab', function ($scope, $translate) {
   
+	/* DATEPICKERS */
 	$scope.datepickers = {
 		datefrom: false,
 		dateto: false
@@ -37,6 +36,18 @@ angular.module('ui.bootstrap').controller('awayTab', function ($scope) {
 	};
   
 	$scope.format = 'yyyy/MM/dd'; 
+	
+	
+	/* CONTACTS */
+	$scope.contacts = [{}]; // Default: one empty contact
+	
+	$scope.add = function () {
+		$scope.contacts.push({}); //Add one empty contact
+    };
+	
+	$scope.remove= function (index) {
+		$scope.contacts.splice(index, 1);
+	};
 })
 
 
@@ -62,18 +73,3 @@ app.directive('input', function ($parse) {
   };
 });
 
-
-app.controller('awayTab', function($translate, $scope) {
-
-	$scope.contacts = [{}]; // Default: one empty contact
-	
-	$scope.add = function () {
-		$scope.contacts.push({}); //Add one empty contact
-    };
-	
-	$scope.remove= function (index) {
-		$scope.contacts.splice(index, 1);
-	};
-	
-		
-})
