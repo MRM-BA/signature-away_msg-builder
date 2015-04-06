@@ -56,9 +56,9 @@ var translations = {
 		away: {
 			title: "Away Message",
 			from_date: "OOO from date",
-			from_date_plh: "from",
+			from_date_plh: "From",
 			to_date: "OOO until date",
-			to_date_plh: "to",
+			to_date_plh: "Until",
 			include_contacts : "Include contacts",
 			contacts: {
 				yes: "Yes",
@@ -135,9 +135,9 @@ var translations = {
 		away: {
 			title: "Mensaje fuera de la oficina",
 			from_date: "Fuera desde",
-			from_date_plh: "desde",
+			from_date_plh: "Desde",
 			to_date: "Fuera hasta",
-			to_date_plh: "hasta",
+			to_date_plh: "Hasta",
 			include_contacts : "Incluir contactos",
 			contacts: {
 				yes: "Si",
@@ -147,7 +147,7 @@ var translations = {
 				full_name : "Nombre",
 				full_name_plh : "Nombre del contacto",
 				job_title_plh: "Posición del contacto",
-				other: "Proyecto/Reazón"
+				other: "Proyecto/Razón"
 			},
 			new_contact: "Agregar contacto",
 			remove_contact: "Eliminar",
