@@ -1,6 +1,7 @@
 var translations = {
     en: {
 		page_title: "Email Tools",
+		page_subtitle: "Signature builder // OOO message",
 		preview_title: "Preview",
 		lang_switcher: {
 			language: "Language",
@@ -80,6 +81,7 @@ var translations = {
     },
 	es: {
 		page_title: "Herramientas de Email",
+		page_subtitle: "Creador de firma // Mensaje fuera de oficina",
 		preview_title: "Vista previa",
 		lang_switcher: {
 			language: "Idioma",

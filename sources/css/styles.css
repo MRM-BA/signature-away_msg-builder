@@ -121,47 +121,42 @@ input[data-toggle='toggle']{
 	-webkit-background-size: cover;
 }
 
+#header #top{
+  background-color: #fff;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+
 /*	$LOGO
 ************************/
 #logo{
 	color: #fff;
 	margin: 0;
-	padding-top: 30px;
-	text-transform: uppercase;
+	padding-bottom: 30px;
+	
 }
 
 #logo h1{
-	font-size: 3em;
-	font-weight: 100;
-	margin-bottom: 0;
-	padding: 0;
+  color: #fffffe;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 #logo h2{
-	font-size: 4em;
-	margin-top: 0;
-	padding: 0;
-	padding-bottom: 30px;
+  color: #e5c2f9;
+  font-size: 20px;
+  margin: 0;
 }
 
 #logo .brand{
 	color: #fff;
 	color: #baafc4;
 	font-weight: 800;
-}
-
-#logo .brand-mccann{
-	font-family: Cabin;
-	font-weight: 100;
-	padding-left: 1em;
-	position: relative;
-	text-transform: none;
-}
-#logo .brand-mccann:before{
-	content: '//';
-	left: .1em;
-	letter-spacing: -.25em;
-	position: absolute;
 }
 
 @media (max-width: 767px){
