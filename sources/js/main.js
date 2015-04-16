@@ -118,8 +118,11 @@ $(document).ready(function(){
 	}
 	
 	$('.box-preview .panel-body').click(function(){
+				
 		$(this).find('.code').empty();
 		$(this).find('.code').html( $(this).find('.preview').html() );
+		
+		var ph = $(this).find('.preview').height();
 		
 		//Clean all angular attr and classes
         $(this).find('.code .ng-hide').remove();
@@ -127,20 +130,45 @@ $(document).ready(function(){
 		$(this).find('.code *').removeAttr('ng-hide');
 		$(this).find('.code .ng-binding').removeClass('ng-binding');
 		
+		if( $(this).parents('#tab-away').length ){
+			
+			//Clean all HTML and preserve newline characters
+			var text = $(this).find('.code').html()
+				.replace(/\n/g, "")
+				.replace(/[\t ]+\</g, "<")
+				.replace(/\>[\t ]+\</g, "><")
+				.replace(/\>[\t ]+$/g, ">")
+				.replace(/(<p\s*[\/]?>)/gi, "<br>$1")
+				.replace(/(<li.*?>)/gi, "<br><br>$1")
+				.replace(/<br\s*[\/]?>/gi, "\n");
+						
+			$(this).find('.code').html( '<textarea cols="50" rows="10">'+ $(text).text() +'</textarea>');
+		}
+		
+		$(this).find('.code textarea').height(ph);
+		console.log(ph);
+		
 		$(this).find('.preview').hide();
 		$(this).find('.code').show();
 		
-		$(this).find('.code').selectText();
+
+		if( $(this).parents('#tab-away').length ){
+			$(this).find('.code textarea').select();
+		}else{
+			$(this).find('.code').selectText();
+		}
 	});
 	
 	
-	$('input[type!="checkbox"]').focus(function(){
+	
+	
+	
+	$('html').click(function(){
 		toggle_preview();
-	});
+	})
 	
-	$('input[type="checkbox"]').change(function(){
-		toggle_preview();
-	});
+	$('html').on('click', '.preview', function(event){
+		event.stopPropagation();
+	})
 	
-		
 });//jQuery
