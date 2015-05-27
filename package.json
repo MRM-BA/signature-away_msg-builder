@@ -1,0 +1,49 @@
+{
+	"name": "signature-away_msg-builder",
+	"version": "1.0.0",
+	"description": "Web application to create email signatures and away/ooo message with contacts.",
+	"main": "sources/index.html",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MRM-BA/signature-away_msg-builder.git"
+	},
+	"keywords": [
+		"signature",
+		"builder",
+		"ooo",
+		"away",
+		"message",
+		"email"
+	],
+	"dependencies": {
+		"autoprefixer": "^3.1.0",
+		"browser-sync": "^1.6.2",
+		"changed": "0.0.2",
+		"del": "^0.1.3",
+		"gulp": "^3.8.9",
+		"gulp-changed": "^1.0.0",
+		"gulp-concat": "^2.4.1",
+		"gulp-install": "^0.2.0",
+		"gulp-jshint": "^1.8.6",
+		"gulp-minify-css": "^0.3.11",
+		"gulp-rename": "^1.2.0",
+		"gulp-replace": "^0.4.0",
+		"gulp-styledocco": "0.0.1",
+		"jshint-stylish": "^1.0.0",
+		"styledocco": "^0.6.6"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Lucas Dasso",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/MRM-BA/signature-away_msg-builder/issues"
+	},
+	"homepage": "https://github.com/MRM-BA/signature-away_msg-builder"
+}
+
+
+
+
