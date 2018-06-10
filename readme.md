@@ -6,19 +6,19 @@ This web app allows to dynamically build:
 2. The out of office message.  
 
 
-###Capabilities
+### Capabilities
 
 - Browser support: IE9+, Chrome, FireFox
 - Responsive
 
 
-###Technologies
+### Technologies
 - jQuery
 - Bootstrap 3
 - Angular 1.3
 
 
-###Multilingual
+### Multilingual
 
 - The web app is aviable on english and spanish.
 - The default language is automaticly detected based on the browser language.
@@ -26,9 +26,9 @@ This web app allows to dynamically build:
 Translations are located on the file **sources\js\translations.js** as JSON object.
 
 
-##Preview
+## Preview
 
-###Signature builder
+### Signature builder
 ![Signature builder][signature_live]
 
 ### OOO / Away message
@@ -40,7 +40,7 @@ Translations are located on the file **sources\js\translations.js** as JSON obje
 The web app can run stand-alone from any web browser since all the resources are relatives to the index.html.
 
 
-TODO: Add Node, Bower, and Gulp.
+>TODO: Add Node, Bower, and Gulp.
 
 
 ## Usage
